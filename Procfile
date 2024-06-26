@@ -1,2 +1,1 @@
-web: python applications/web/app.py 
-worker: python applications/data_collector/app.py
+web: gunicorn applications.web.app:app 
