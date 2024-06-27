@@ -19,3 +19,7 @@ virtualenv==20.26.2
 Werkzeug==3.0.3
 psycopg[c]; sys_platform == "linux"
 psycopg[binary]; sys_platform != "linux"
+prometheus-flask-exporter==0.23.0
+prometheus_client==0.20.0
+typing_extensions==4.12.2
+
