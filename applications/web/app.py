@@ -18,3 +18,7 @@ def echo_input():
     input_text = request.form.get("user_input", "")
     return "You entered: " + input_text
 
+
+@app.route("/template")
+def mainTemplate():
+       return render_template("list.html")

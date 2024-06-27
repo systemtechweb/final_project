@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-from flask import Flask, request
+from flask import Flask,render_template, request
 
 app = Flask(__name__)
 
@@ -18,3 +18,7 @@ def echo_input():
     input_text = request.form.get("user_input", "")
     return "You entered: " + input_text
 
+@app.route("/template")
+def test():
+   return render_template("list.html") 
+   return "You entered: " 
