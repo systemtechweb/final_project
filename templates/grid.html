@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex Grid</title>
+    <style>
+        .grid-container {
+            display: flex;
+            flex-wrap: wrap;
+            width: 100vw;
+        }
+
+        .grid-item {
+            flex: 1 0 calc(100vw / 12);
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+
+	  .grid-item-key {
+            flex: 1 0 calc(100vw / 12);
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+
+        .grid-item.first-column {
+            flex: 2 0 calc(200vw / 12);
+        }
+
+.icon {
+           max-width:40px;
+        }
+
+	.too-calm {
+background-color:#e7e9e5;
+}
+.good {
+background-color:#d7f2f8;
+}
+
+.rough {
+background-color:#ffced3;
+}
+    </style>
+</head>
+<body>
+
+<h3> KEY </h3>
+      <div class="grid-container">
+        <!-- Row 1 -->
+        <div class="grid-item-key too-calm"">TOO CALM</div>
+        <div class="grid-item-key good">GOOD</div>
+        <div class="grid-item-key rough ">ROUGH</div>
+     <div>
+
+<h3> Your Sailing Forecast for {{city}} boat size {{length}} feet</h3>
+    <div class="grid-container">
+        <!-- Row 1 -->
+        <div class="grid-item first-column">DATE</div>
+        <div class="grid-item">7 am</div>
+        <div class="grid-item">8 am</div>
+        <div class="grid-item">9 am</div>
+        <div class="grid-item">10 am</div>
+        <div class="grid-item">11 am</div>
+        <div class="grid-item">12 pm</div>
+        <div class="grid-item">1 pm</div>
+        <div class="grid-item">2 pm</div> 
+        <div class="grid-item">3 pm</div>
+        <div class="grid-item">4 pm</div>
+       {% for forecast in forecasts %}
+
+        <!-- Row 2 -->
+        <div class="grid-item first-column">{{ forecast.day }}<br> {{ forecast.day_condition }} <img class="icon" src="{{ forecast.day_condition_icon }}" /> </div>
+        <div class="grid-item {{ forecast.sailing_condition_7 }}">{{ forecast.temp_7}} &deg;F</div>
+        <div class="grid-item {{ forecast.sailing_condition_8 }}">{{ forecast.temp_8}} &deg;F</div>
+        <div class="grid-item {{ forecast.sailing_condition_9 }}">{{ forecast.temp_9}} &deg;F</div>
+        <div class="grid-item {{ forecast.sailing_condition_10 }}">{{ forecast.temp_10}} &deg;F</div>
+        <div class="grid-item {{ forecast.sailing_condition_11 }}">{{ forecast.temp_11}} &deg;F</div>
+        <div class="grid-item {{ forecast.sailing_condition_12 }}">{{ forecast.temp_12}} &deg;F</div>
+        <div class="grid-item {{ forecast.sailing_condition_13 }}">{{ forecast.temp_13}} &deg;F</div>
+        <div class="grid-item {{ forecast.sailing_condition_14 }}">{{ forecast.temp_14}} &deg;F</div>
+        <div class="grid-item {{ forecast.sailing_condition_15 }}">{{ forecast.temp_15}} &deg;F</div>
+        <div class="grid-item {{ forecast.sailing_condition_16 }}">{{ forecast.temp_16}} &deg;F</div>
+        {% endfor %}        
+
+    </div>
+<br>
+<p><a href="/"> Get another Forecast</a> </p>
+</body>
+</html>
+
+

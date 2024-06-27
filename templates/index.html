@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sailing Forecast</title>
+    <style>
+        .grid-container {
+            display: flex;
+            flex-wrap: wrap;
+            width: 100vw;
+        }
+
+        .grid-item {
+            flex: 1 0 calc(100vw / 12);
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+
+	  .grid-item-key {
+            flex: 1 0 calc(100vw / 12);
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+
+        .grid-item.first-column {
+            flex: 2 0 calc(200vw / 12);
+        }
+
+.icon {
+           max-width:40px;
+        }
+
+	.too-calm {
+background-color:#e7e9e5;
+}
+.good {
+background-color:#d7f2f8;
+}
+
+.rough {
+background-color:#ffced3;
+}
+    </style>
+</head>
+<body>
+
+
+  <h1> Welcome to the sailing forecast app</h1>
+   <p>Select a city and entery your boat size to get started </p>
+   <form action="/get_forecast" method="POST">
+
+<select name="city">
+<option value="New York"></option>"New York"</option>
+<option value="Albany">Albany</option>
+<option value="Anchorage">Anchorage</option>
+<option value="Baltimore">Baltimore</option>
+<option value="Baton Rouge">Baton Rouge</option>
+<option value="Beaumont">Beaumont</option>
+<option value="Boston">Boston</option>
+<option value="Brownsville">Brownsville</option>
+<option value="Buffalo">Buffalo</option>
+<option value="Charleston">Charleston</option>
+<option value="Chicago">Chicago</option>
+<option value="Cincinnati">Cincinnati</option>
+<option value="Cleveland">Cleveland</option>
+<option value="Corpus Christi">Corpus Christi</option>
+<option value="Detroit">Detroit</option>
+<option value="Galveston">Galveston</option>
+<option value="Honolulu">Honolulu</option>
+<option value="Houston">Houston</option>
+<option value="Jacksonville">Jacksonville</option>
+<option value="Laredo">Laredo</option>
+<option value="Long Beach">Long Beach</option>
+<option value="Los Angeles">Los Angeles</option>
+<option value="Louisville">Louisville</option>
+<option value="Memphis">Memphis</option>
+<option value="Miami">Miami</option>
+<option value="Mobile">Mobile</option>
+<option value="New Orleans">New Orleans</option>
+<option value="New York">New York</option>
+<option value="Newark">Newark</option>
+<option value="Norfolk">Norfolk</option>
+<option value="Oakland">Oakland</option>
+<option value="Oklahoma City">Oklahoma City</option>
+<option value="Palm Beach">Palm Beach</option>
+<option value="Philadelphia">Philadelphia</option>
+<option value="Pittsburgh">Pittsburgh</option>
+<option value="Port Arthur">Port Arthur</option>
+<option value="Port Everglades">Port Everglades</option>
+<option value="Port Hueneme">Port Hueneme</option>
+<option value="Portland">Portland</option>
+<option value="Richmond">Richmond</option>
+<option value="San Diego">San Diego</option>
+<option value="San Juan">San Juan</option>
+<option value="Savannah">Savannah</option>
+<option value="Seattle">Seattle</option>
+<option value="Tacoma">Tacoma</option>
+<option value="Tampa">Tampa</option>
+<option value="Wilmington">Wilmington"</option>
+</select>
+ <p>Please select a range:</p>
+        
+        <input type="radio" id="under_13" name="boat_length" value="12">
+        <label for="under_13">Under 13 feet</label><br>
+
+        <input type="radio" id="13_20" name="boat_length" value="20">
+        <label for="13_20">13-20 feet</label><br>
+
+        <input type="radio" id="20_30" name="boat_length" value="30">
+        <label for="20_30">20-30 feet</label><br>
+
+        <input type="radio" id="over_30" name="boat_length" value="40">
+        <label for="over_30">Over 30 feet</label><br>
+<input type="submit" value="Submit!">
+</form>
+
+
+</body>
+</html>
+
+
